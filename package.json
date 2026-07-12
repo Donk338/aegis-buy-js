@@ -1,6 +1,6 @@
 {
   "name": "aegis-buy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Trust-gated buyer client for the x402 machine economy — spend policy, Aegis trust gate, receipts ledger, MCP server.",
   "license": "MIT",
   "type": "module",

@@ -1,10 +1,15 @@
 # aegis-buy
 
-**Trust-gated buyer client for the x402 machine economy.** Your agent wants to pay
-APIs with USDC over HTTP 402 — this package makes sure it never pays the wrong
-service, the wrong amount, or more than you allowed.
+**The trust layer for agent spending** (Node/ESM + MCP). Wallets answer *"can my
+agent pay?"* — aegis-buy answers *"should it pay, and did it get what it paid
+for?"*
 
-Powered by [Aegis](https://aegis.borisinc.com), the trusted agent-commerce hub.
+Before your agent spends: a **trust gate backed by real delivery verification**
+([Aegis](https://aegis.borisinc.com) actually buys from sellers with real USDC
+to prove they deliver — the only x402 index that does), a **local spend policy**
+(per-call/daily caps, tier floors, allow/deny lists), and a **signed receipt**
+on every purchase. Works on top of any funded Base wallet, not instead of it.
+
 Buyer docs: https://aegis.borisinc.com/buyer
 
 ```
