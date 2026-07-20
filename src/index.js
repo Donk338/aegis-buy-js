@@ -3,3 +3,4 @@ export { BuyClient, makeBuyer, parsePriceUsd, decodePaymentRequired, appendParam
 export { SpendPolicy, TIER_RANK, TRUST_MODES, hostOf } from "./policy.js";
 export { Ledger, SPEND_STATUSES } from "./ledger.js";
 export { TrustGate, DEFAULT_HUB, CACHE_TTL_MS } from "./gate.js";
+export { makeClient, discover, trustCheck, paidGet, procure, asText, getAegisTools } from "./frameworks.js";

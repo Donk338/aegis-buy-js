@@ -28,6 +28,22 @@ npm i aegis-buy            # library + MCP server (bin: aegis-buy-mcp)
 npx --package=aegis-buy aegis-buy-mcp   # run the MCP server without installing
 ```
 
+## LangChain.js tools (0.2.0)
+
+```js
+import { getAegisTools } from "aegis-buy/frameworks";
+const tools = await getAegisTools();           // reads AEGIS_BUYER_KEY / X402_PRIVATE_KEY
+// -> [aegis_discover (free), aegis_trust_check, aegis_paid_get, aegis_procure]
+```
+
+Requires the optional peer dep `@langchain/core`. Without a wallet key configured, paid
+tools return an instructive error instead of spending. All spend is capped locally by
+SpendPolicy (default $0.05/call, $1.00/day, provisional+ sellers only).
+
+Scope note: CrewAI tools and the real-world services layer (Bitrefill MoR buying) live in
+the Python package (`pip install aegis-buy`) — JS parity covers the buyer client, trust
+gate, spend policy, ledger, MCP server, and LangChain.js tools.
+
 ## Quickstart
 
 ```js

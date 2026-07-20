@@ -1,7 +1,7 @@
 {
   "name": "aegis-buy",
-  "version": "0.1.1",
-  "description": "Trust-gated buyer client for the x402 machine economy — spend policy, Aegis trust gate, receipts ledger, MCP server.",
+  "version": "0.2.0",
+  "description": "Trust-gated buyer client for the x402 machine economy — spend policy, Aegis trust gate, receipts ledger, MCP server, LangChain.js tools.",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.js",
@@ -10,10 +10,11 @@
     "./client": "./src/client.js",
     "./policy": "./src/policy.js",
     "./ledger": "./src/ledger.js",
-    "./gate": "./src/gate.js"
+    "./gate": "./src/gate.js",
+    "./frameworks": "./src/frameworks.js"
   },
   "bin": {
-    "aegis-buy-mcp": "./src/mcp.js"
+    "aegis-buy-mcp": "src/mcp.js"
   },
   "files": [
     "src",
@@ -26,7 +27,18 @@
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["x402", "402", "usdc", "payments", "micropayments", "mcp", "agent", "aegis", "trust", "base"],
+  "keywords": [
+    "x402",
+    "402",
+    "usdc",
+    "payments",
+    "micropayments",
+    "mcp",
+    "agent",
+    "aegis",
+    "trust",
+    "base"
+  ],
   "homepage": "https://aegis.borisinc.com/buyer",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
@@ -35,5 +47,13 @@
     "@x402/fetch": "^2.17.0",
     "viem": "^2.21.0",
     "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "@langchain/core": ">=0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@langchain/core": {
+      "optional": true
+    }
   }
 }
