@@ -1,7 +1,7 @@
 {
   "name": "aegis-buy",
-  "version": "0.2.0",
-  "description": "Trust-gated buyer client for the x402 machine economy — spend policy, Aegis trust gate, receipts ledger, MCP server, LangChain.js tools.",
+  "version": "0.2.1",
+  "description": "Trust-gated buyer client for the x402 machine economy \u2014 spend policy, Aegis trust gate, receipts ledger, MCP server, LangChain.js tools.",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.js",

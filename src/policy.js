@@ -4,7 +4,11 @@ import os from "node:os";
 import path from "node:path";
 
 export const DEFAULT_PATH = "~/.aegis-buy/policy.json";
-export const TIER_RANK = { unverified: 0, provisional: 1, verified: 2, trusted: 3 };
+// Aegis's real tier ladder (aegis/verify.py:159-163): trusted > verified >
+// provisional > flagged > unverified. "flagged" was missing, so a flagged
+// service fell through `TIER_RANK[tier] ?? 0` to rank 0 rather than its own
+// rung. Kept in sync with the Python client. 2026-07-28.
+export const TIER_RANK = { unverified: 0, flagged: 1, provisional: 2, verified: 3, trusted: 4 };
 export const TRUST_MODES = ["basic", "strict", "off"];
 
 export function expandUser(p) {
