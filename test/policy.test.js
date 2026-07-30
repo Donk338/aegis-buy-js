@@ -35,8 +35,8 @@ test("total cap", () => {
   assert.match(r.reason, /max_total/);
 });
 
-test("tier ladder unverified<provisional<verified<trusted; flagged always blocked", () => {
-  assert.deepEqual(TIER_RANK, { unverified: 0, provisional: 1, verified: 2, trusted: 3 });
+test("tier ladder unverified<flagged<provisional<verified<trusted; flagged always blocked", () => {
+  assert.deepEqual(TIER_RANK, { unverified: 0, flagged: 1, provisional: 2, verified: 3, trusted: 4 });
   const p = new SpendPolicy({ min_tier: "provisional" });
   assert.equal(p.check("https://a.example/x", 0.01, "trusted").allowed, true);
   assert.equal(p.check("https://a.example/x", 0.01, "verified").allowed, true);
